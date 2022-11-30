@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block body %}
+<h1>No results for "{{results}}"</h1>   
+
+{% if result_here %} 
+Did you mean
+<ul>
+    {% for options in result_here %}
+    <li>
+        <a href = "{% url 'page_entry' title=options %}">{{ options }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}
