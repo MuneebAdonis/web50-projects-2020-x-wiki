@@ -7,7 +7,7 @@
 {% block body %}
     {{converted | safe}}
     <h1>{{error}}</h1>
-
+    {% if not error %}
     <a href = "{% url 'edit' title=title %}">Click to edit {{title}} page</a>
-
+    {% endif %}
 {% endblock %}
